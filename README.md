@@ -1,0 +1,1 @@
+# guirar_decals
