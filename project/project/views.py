@@ -1,14 +1,14 @@
 # coding: utf-8
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from models import Decal
+from catalog.models import Decal
 
 
-def catalog(request):
+def home(request):
     decals = Decal.objects.all()
 
     return render_to_response(
-        'catalog.html',
+        'home.html',
         {
             'decals': decals,
         },
