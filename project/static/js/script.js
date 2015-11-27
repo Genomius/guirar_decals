@@ -18,4 +18,8 @@ $(document).ready(function () {
             }
         });
     });
+
+    $(".order-btn").click(function(){
+
+    });
 });

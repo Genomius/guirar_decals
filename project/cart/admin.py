@@ -1,19 +1,19 @@
 from django.contrib import admin
-from models import Cart, DecalInCart, Order
+from models import Cart, Item
 
 
 class CartAdmin(admin.ModelAdmin):
     list_display = ("creation_date",)
 
 
-class DecalInCartAdmin(admin.ModelAdmin):
-    list_display = ("decal", "quantity",)
+class ItemAdmin(admin.ModelAdmin):
+    list_display = ("cart", "unit_price", "quantity",)
 
-
-class OrderAdmin(admin.ModelAdmin):
-    list_display = ("name", "phone", "price")
+#
+# class OrderAdmin(admin.ModelAdmin):
+#     list_display = ("name", "phone", "price")
 
 
 admin.site.register(Cart, CartAdmin)
-admin.site.register(DecalInCart, DecalInCartAdmin)
-admin.site.register(Order, OrderAdmin)
+admin.site.register(Item, ItemAdmin)
+# admin.site.register(Order, OrderAdmin)

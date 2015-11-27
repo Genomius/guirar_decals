@@ -18,27 +18,26 @@
             </ul>
 
             <div class="row clearfix">
-                <ul class="gallery-post-grid holder">
-                    <!-- Gallery Item 1 -->
-                    {% for decal in decals %}
-                      <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-4col hidden-phone hidden-tablet">
-                          <span class="gallery-icons">
-                            <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                            <a href="gallery-single.htm" class="item-details-link"></a>
-                          </span>
-                        </span>
-                        <a href="/catalog/{{ decal.slug }}">
-                          {% thumbnail decal.image "350x175" format="PNG" crop="center" as im %}
-											      <img class="" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-											    {% endthumbnail %}
-                        </a>
-                        <span class="project-details"><a href="gallery-single.htm">{{ decal.title }}</a>For an international ad campaign.</span>
-                      </li>
-
-{#										  {{ decal.price }}#}
-										{% endfor %}
-                </ul>
+              <ul class="gallery-post-grid holder">
+                {% for decal in decals %}
+                  <li class="span3 gallery-item" data-id="id-1" data-type="illustration">
+                    <span class="gallery-hover-4col hidden-phone hidden-tablet">
+                      <span class="gallery-icons">
+                        <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
+                        <a href="gallery-single.htm" class="item-details-link"></a>
+                      </span>
+                    </span>
+                    <a href="/catalog/{{ decal.slug }}">
+                    <div class="image-div">
+                      {% thumbnail decal.image "x175" format="PNG" crop="center" as im %}
+									      <img class="" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+									    {% endthumbnail %}
+                    </div>
+                    </a>
+                    <span class="project-details"><a href="gallery-single.htm">{{ decal.title }}</a>For an international ad campaign.</span>
+                  </li>
+								{% endfor %}
+              </ul>
             </div>
 
             <!-- Pagination -->
